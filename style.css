@@ -156,3 +156,9 @@
     transform:scale(.7)!important;
   }
 }
+
+/* Bouton quitter : ajout indépendant des dimensions PC et mobile existantes. */
+.quit-site-btn { position: fixed; z-index: 9999; right: 14px; bottom: 16px; padding: 10px 15px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; background: #25182f; color: #fff; font: 600 13px/1.2 Arial, sans-serif; cursor: pointer; box-shadow: 0 3px 14px rgba(0,0,0,.35); }
+.quit-site-btn:hover, .quit-site-btn:focus-visible { background: #473050; outline-offset: 3px; }
+body[data-active-screen="videoIntro"] .quit-site-btn { display: none; }
+@media (max-width: 760px) { .quit-site-btn { right: 12px; bottom: 22px; padding: 9px 12px; font-size: 12px; } }
