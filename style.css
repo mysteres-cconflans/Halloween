@@ -86,31 +86,15 @@
  #videoIntro .opening-video-frame video{object-fit:contain!important}
 }
 
-/* V14 — Correctif ciblé : taille du questionnaire Eval&Go sur mobile.
-   L'iframe étant externe, on réduit son rendu visuel sans prétendre modifier
-   les styles internes du fournisseur. La hauteur est compensée pour permettre
-   le défilement dans le questionnaire. */
+/* Mobile uniquement : Eval&Go plus lisible, PC inchangé. */
 @media (max-width:760px) {
-  body[data-active-screen="survey"] { overflow:hidden; }
-  #survey .survey-frame {
-    position:relative!important; width:100%!important;
-    height:100dvh!important; overflow:hidden!important;
-    border:0!important; margin:0!important;
-  }
-  #survey .survey-frame iframe {
-    position:absolute!important; top:0!important; left:0!important;
-    display:block!important; width:200%!important; height:200%!important;
-    max-width:none!important; min-height:0!important; border:0!important;
-    transform:scale(.5)!important; transform-origin:top left!important;
-  }
+  body[data-active-screen="survey"] {overflow:hidden;}
+  #survey .survey-frame {position:relative!important;width:100%!important;height:100dvh!important;overflow:hidden!important;border:0!important;margin:0!important;}
+  #survey .survey-frame iframe {position:absolute!important;top:0!important;left:0!important;display:block!important;width:125%!important;height:125%!important;max-width:none!important;min-height:0!important;border:0!important;transform:scale(.8)!important;transform-origin:top left!important;}
 }
 @media (max-width:390px) {
-  #survey .survey-frame iframe {
-    width:217.3913%!important; height:217.3913%!important;
-    transform:scale(.46)!important;
-  }
+  #survey .survey-frame iframe {width:128.205128%!important;height:128.205128%!important;transform:scale(.78)!important;}
 }
-
 
 /* PC : chaque étape est une véritable vue occupant le viewport.
    Aucune largeur maximale ni marges de l'ancien gabarit. */
