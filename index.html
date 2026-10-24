@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171022">
+  <title>Le mystère de la mairie — Halloween</title>
+  <link rel="stylesheet" href="style.css?v=pc-evalandgo-20261024-03">
+
+  <script src="./script.js?v=15" defer></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Accueil du jeu">
+      <span class="brand-mark">✦</span> CONFLANS
+      <span class="brand-muted">/ LE MYSTÈRE</span>
+    </a>
+    <div class="top-right">
+      <span class="moon">☾</span>
+      <span>ÉDITION HALLOWEEN</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="videoIntro" class="screen video-intro-screen is-active">
+      <div class="video-intro-content">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span>
+          CONFLANS-SAINTE-HONORINE PRÉSENTE
+        </p>
+
+        <div class="opening-video-frame">
+          <video id="openingVideo" autoplay muted playsinline preload="auto">
+            <source src="./intro-halloween.mp4" type="video/mp4">
+            Votre navigateur ne peut pas lire cette vidéo.
+          </video>
+        </div>
+
+        <div class="video-intro-bottom">
+          <span class="video-intro-label">
+            <span class="live-dot"></span>
+            LE MYSTÈRE COMMENCE…
+          </span>
+          <button id="skipVideoBtn" class="btn btn-secondary">
+            Passer <span>→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro" class="screen intro-screen hidden" hidden>
+      <div class="intro-copy">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span>
+          UNE ENQUÊTE À CONFLANS-SAINTE-HONORINE
+        </p>
+
+        <h1>Le mystère<br>de la <em>mairie.</em></h1>
+
+        <p class="lead">
+          La nuit est tombée sur Conflans… Des indices se cachent
+          dans les coulisses de la ville. Sauras-tu les retrouver
+          avant minuit&nbsp;?
+        </p>
+
+        <div class="intro-meta">
+          <span>ÉNIGMES</span><i></i>
+          <span>QUESTIONNAIRE</span><i></i>
+          <span>À TOI DE JOUER</span>
+        </div>
+
+        <button id="startBtn" class="btn btn-primary">
+          Entrer dans le mystère <span>↗</span>
+        </button>
+      </div>
+
+      <div class="intro-art">
+        <div class="video-frame">
+          <div class="video-still" aria-hidden="true">
+            <span>☾</span>
+            <b>LE MYSTÈRE<br>DE LA MAIRIE</b>
+            <small>CONFLANS · 31 OCTOBRE</small>
+          </div>
+          <div class="video-caption">
+            <span class="live-dot"></span>
+            CONFLANS, APRÈS LA TOMBÉE DE LA NUIT
+          </div>
+        </div>
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="floating-pumpkin" aria-hidden="true">🎃</div>
+        <div class="art-note">DOSSIER Nº 31<br><b>CLASSÉ SECRET</b></div>
+      </div>
+    </section>
+
+
+
+    <section id="survey" class="screen survey-screen hidden" hidden>
+      <div class="survey-content">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span>
+          À TOI DE JOUER
+        </p>
+
+        <h1>Entre dans <em>le mystère…</em></h1>
+
+        <p class="lead">
+          Réponds aux énigmes pour percer le mystère de la mairie !
+        </p>
+
+        <div class="survey-frame">
+          <iframe
+            src="https://app.questionnaireweb.com/f/457547/4qkpHXZK3xfnnXtSuTcBqm?o=987d984d82b025"
+            title="Questionnaire de participation — Le mystère de la mairie"
+            loading="lazy"
+            allow="fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+
+        <p class="small-note survey-fallback">
+          Si le questionnaire ne s’affiche pas,
+          <a
+            href="https://app.questionnaireweb.com/f/457547/4qkpHXZK3xfnnXtSuTcBqm?o=987d984d82b025"
+            target="_blank"
+            rel="noopener noreferrer">
+            ouvre-le dans une nouvelle fenêtre.
+          </a>
+        </p>
+
+        <button id="backToResultBtn" class="btn btn-secondary survey-back">
+          ← Retour à l’accueil
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>CONFLANS-SAINTE-HONORINE</span>
+    <span>UN MYSTÈRE QUI FAIT FRISSONNER ✦</span>
+  </footer>
+
+</body>
+</html>
