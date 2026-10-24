@@ -162,3 +162,27 @@
 .quit-site-btn:hover, .quit-site-btn:focus-visible { background: #473050; outline-offset: 3px; }
 body[data-active-screen="videoIntro"] .quit-site-btn { display: none; }
 @media (max-width: 760px) { .quit-site-btn { right: 12px; bottom: 22px; padding: 9px 12px; font-size: 12px; } }
+
+/* Fantômes décoratifs uniquement pendant Eval&Go : aucun clic intercepté. */
+.survey-ghosts {position:fixed;inset:0;z-index:100;pointer-events:none;overflow:hidden;visibility:hidden;opacity:0;contain:layout paint;}
+body[data-active-screen="survey"] .survey-ghosts {visibility:visible;opacity:1;}
+.survey-ghost {position:absolute;left:0;top:0;display:block;width:1em;font-size:clamp(24px,3.3vw,43px);line-height:1;opacity:0;filter:grayscale(1) brightness(1.9);will-change:transform,opacity;animation:ghost-drift var(--ghost-duration) linear infinite;animation-delay:var(--ghost-delay);}
+.ghost-one {--ghost-duration:24s;--ghost-delay:-2s;--ghost-y:18vh;--ghost-rise:-30px;}
+.ghost-two {--ghost-duration:31s;--ghost-delay:-15s;--ghost-y:40vh;--ghost-rise:55px;font-size:29px;}
+.ghost-three {--ghost-duration:27s;--ghost-delay:-20s;--ghost-y:68vh;--ghost-rise:-48px;font-size:35px;}
+.ghost-four {--ghost-duration:36s;--ghost-delay:-8s;--ghost-y:83vh;--ghost-rise:24px;font-size:26px;}
+@keyframes ghost-drift {
+  0% {transform:translate3d(-65px,var(--ghost-y),0) rotate(-9deg);opacity:0;}
+  12% {opacity:.20;}
+  48% {opacity:.25;}
+  88% {opacity:.18;}
+  100% {transform:translate3d(calc(100vw + 70px),calc(var(--ghost-y) + var(--ghost-rise)),0) rotate(9deg);opacity:0;}
+}
+@media(max-width:760px){.survey-ghost{font-size:26px}.ghost-two,.ghost-four{font-size:21px}.ghost-three{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.survey-ghosts{display:none!important}}
+
+/* Accès direct à l'intranet, sans toucher aux dimensions du questionnaire. */
+.intranet-return-btn {position:fixed;z-index:9999;right:115px;bottom:16px;display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:#25182f;color:#fff;text-decoration:none;font:600 13px/1.2 Arial,sans-serif;box-shadow:0 3px 14px rgba(0,0,0,.35);}
+.intranet-return-btn:hover,.intranet-return-btn:focus-visible {background:#473050;color:#fff;outline-offset:3px;}
+body[data-active-screen="videoIntro"] .intranet-return-btn {display:none;}
+@media(max-width:760px){.intranet-return-btn{right:99px;bottom:22px;padding:9px 10px;font-size:11px;max-width:calc(100vw - 110px);text-align:center;}}
