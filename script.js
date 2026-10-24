@@ -92,10 +92,13 @@ video.play().catch(() => {
   // Le bouton « Passer l’introduction » reste accessible.
 });
 
-// Un site web ne peut pas fermer un onglet ouvert par l’utilisateur.
-// Quitter affiche donc une page vierge sans toucher à l’historique précédent.
-document.getElementById("quitSiteBtn").addEventListener("click", () => {
-  video.pause();
-  music.pause();
-  window.location.replace("about:blank");
-});
+// Remplacer la page du jeu par l'intranet dans le même onglet.
+const intranetReturn = document.querySelector('.intranet-return-btn');
+if (intranetReturn) {
+  intranetReturn.addEventListener('click', (event) => {
+    event.preventDefault();
+    video.pause();
+    music.pause();
+    window.location.replace(intranetReturn.href);
+  });
+}

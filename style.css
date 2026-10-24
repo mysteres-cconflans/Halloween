@@ -157,12 +157,6 @@
   }
 }
 
-/* Bouton quitter : ajout indépendant des dimensions PC et mobile existantes. */
-.quit-site-btn { position: fixed; z-index: 9999; right: 14px; bottom: 16px; padding: 10px 15px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; background: #25182f; color: #fff; font: 600 13px/1.2 Arial, sans-serif; cursor: pointer; box-shadow: 0 3px 14px rgba(0,0,0,.35); }
-.quit-site-btn:hover, .quit-site-btn:focus-visible { background: #473050; outline-offset: 3px; }
-body[data-active-screen="videoIntro"] .quit-site-btn { display: none; }
-@media (max-width: 760px) { .quit-site-btn { right: 12px; bottom: 22px; padding: 9px 12px; font-size: 12px; } }
-
 /* Fantômes décoratifs uniquement pendant Eval&Go : aucun clic intercepté. */
 .survey-ghosts {position:fixed;inset:0;z-index:100;pointer-events:none;overflow:hidden;visibility:hidden;opacity:0;contain:layout paint;}
 body[data-active-screen="survey"] .survey-ghosts {visibility:visible;opacity:1;}
@@ -182,7 +176,15 @@ body[data-active-screen="survey"] .survey-ghosts {visibility:visible;opacity:1;}
 @media(prefers-reduced-motion:reduce){.survey-ghosts{display:none!important}}
 
 /* Accès direct à l'intranet, sans toucher aux dimensions du questionnaire. */
-.intranet-return-btn {position:fixed;z-index:9999;right:115px;bottom:16px;display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:#25182f;color:#fff;text-decoration:none;font:600 13px/1.2 Arial,sans-serif;box-shadow:0 3px 14px rgba(0,0,0,.35);}
+.intranet-return-btn {position:fixed;z-index:9999;right:14px;bottom:16px;display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:#25182f;color:#fff;text-decoration:none;font:600 13px/1.2 Arial,sans-serif;box-shadow:0 3px 14px rgba(0,0,0,.35);}
 .intranet-return-btn:hover,.intranet-return-btn:focus-visible {background:#473050;color:#fff;outline-offset:3px;}
 body[data-active-screen="videoIntro"] .intranet-return-btn {display:none;}
-@media(max-width:760px){.intranet-return-btn{right:99px;bottom:22px;padding:9px 10px;font-size:11px;max-width:calc(100vw - 110px);text-align:center;}}
+@media(max-width:760px){.intranet-return-btn{right:12px;bottom:22px;padding:9px 10px;font-size:11px;max-width:calc(100vw - 24px);text-align:center;}}
+
+/* Fantômes lumineux inspirés de l'illustration fournie ; aucun impact sur le formulaire */
+.survey-ghost{width:clamp(85px,12vw,150px)!important;height:auto!important;font-size:initial!important;filter:none!important;opacity:0;transform-origin:center center;}
+.survey-ghost img{display:block;width:100%;height:auto;filter:drop-shadow(0 0 12px rgba(183,177,255,.48));}
+.ghost-two{width:clamp(65px,9vw,115px)!important;}
+.ghost-three{width:clamp(75px,11vw,135px)!important;}
+.ghost-four{width:clamp(55px,8vw,105px)!important;}
+@media(max-width:760px){.survey-ghost{width:90px!important}.ghost-two{width:70px!important}.ghost-three{width:78px!important}.ghost-four{width:62px!important}}
